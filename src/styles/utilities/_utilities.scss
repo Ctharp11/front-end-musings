@@ -14,3 +14,7 @@
 .text-center {
     text-align: center;
 }
+
+.box-shadow {
+    box-shadow: 0 1rem 1.5rem -1rem ($color-black);
+}

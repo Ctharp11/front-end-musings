@@ -7,6 +7,8 @@ import Home from './Home';
 import Nav from './Nav';
 import Post from './Post/Post';
 
+import Footer from './Footer';
+
 class App extends Component {
     constructor() {
         super();
@@ -28,17 +30,21 @@ class App extends Component {
         }
 
         return(
-            <div>
-                <Nav { ...allProps } />
-                <Switch>
-                    <Route path="/" component={Home} /> 
-                    <Route path="/post" component={Post} />
-                </Switch>
-                {!this.state.show
-                    ? null
-                    :
-                    <AuthModal />
-                }
+            <div className="app site">
+                <div className="site-content">
+                    <Nav { ...allProps } />
+                    <Switch>
+                        <Route path="/" component={Home} /> 
+                        <Route path="/post" component={Post} />
+                    </Switch>
+                    {!this.state.show
+                        ? null
+                        :
+                        <AuthModal />
+                    }
+                </div>
+
+                <Footer />
                 
             </div>
         )

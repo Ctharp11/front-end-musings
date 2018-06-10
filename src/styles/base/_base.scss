@@ -20,4 +20,22 @@ body {
     color: #333;
     font-family: 'Lato', sans-serif;
     width: 100%;
-  }
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.site-content:after {
+    content: ‘\00a0’;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
