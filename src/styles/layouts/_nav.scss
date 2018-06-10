@@ -1,3 +1,22 @@
-.home {
-    font-size: 20px;
+@import '../variables/variables';
+
+.nav {
+
+    height: 7rem;
+    border-bottom: 1px solid $color-grey-light;
+
+    &-header {
+        position: relative;
+        top: 2rem;
+        left: 2rem;
+        font-size: 2rem;
+        font-weight: 300;
+        text-decoration: none;
+
+        & a:link,
+        & a:visited {
+            color: $color-font-main;
+            text-decoration: none;
+        }
+    }
 }

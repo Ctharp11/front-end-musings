@@ -18,8 +18,20 @@ body {
   font-family: 'Lato', sans-serif;
   width: 100%; }
 
-.app {
-  color: green; }
-
 .home {
-  font-size: 20px; }
+  margin-top: 7rem; }
+
+.nav {
+  height: 7rem;
+  border-bottom: 1px solid #999; }
+  .nav-header {
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+    font-size: 2rem;
+    font-weight: 300;
+    text-decoration: none; }
+    .nav-header a:link,
+    .nav-header a:visited {
+      color: #333;
+      text-decoration: none; }
