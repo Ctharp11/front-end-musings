@@ -19,19 +19,63 @@ body {
   width: 100%; }
 
 .home {
-  margin-top: 7rem; }
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around; }
 
 .nav {
   height: 7rem;
-  border-bottom: 1px solid #999; }
+  border-bottom: 1px solid #999;
+  display: flex; }
+  @media screen and (max-width: 720px) {
+    .nav {
+      display: block; } }
   .nav-header {
     position: relative;
     top: 2rem;
-    left: 2rem;
+    left: 4rem;
     font-size: 2rem;
     font-weight: 300;
     text-decoration: none; }
+    @media screen and (max-width: 720px) {
+      .nav-header {
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%); } }
     .nav-header a:link,
     .nav-header a:visited {
       color: #333;
       text-decoration: none; }
+  .nav-content {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 3.3rem;
+    right: 4rem;
+    font-size: 16px; }
+    @media screen and (max-width: 720px) {
+      .nav-content {
+        top: 5rem;
+        left: 50%;
+        transform: translateX(-50%); } }
+    .nav-content-create-post {
+      position: relative;
+      top: -.5rem;
+      color: white;
+      background-color: #666;
+      padding: .5rem 1rem;
+      margin-right: 2rem; }
+    .nav-content-profile {
+      margin-right: 2rem; }
+
+.hover:hover {
+  cursor: pointer; }
+
+.center {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.text-center {
+  text-align: center; }

@@ -1,0 +1,16 @@
+.hover {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.center {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text-center {
+    text-align: center;
+}
