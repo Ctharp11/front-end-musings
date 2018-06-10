@@ -49,9 +49,6 @@
         &-create-post {
             position: relative;
             top: -.5rem;
-            color: white;
-            background-color: $color-grey-dark;
-            padding: .5rem 1rem;
             margin-right: 2rem;
 
             @media screen and (max-width: 800px ) {

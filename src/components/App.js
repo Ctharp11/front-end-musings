@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // COMPONENTS
+import About from './About';
 import AuthModal from './Modals/AuthModal';
 import Home from './Home';
 import Nav from './Nav';
@@ -34,8 +35,9 @@ class App extends Component {
                 <div className="site-content">
                     <Nav { ...allProps } />
                     <Switch>
-                        <Route path="/" component={Home} /> 
-                        <Route path="/post" component={Post} />
+                        <Route exact path="/" component={Home} /> 
+                        <Route exact path="/post" component={Post} />
+                        <Route exact path="/about" component={About} />
                     </Switch>
                     {!this.state.show
                         ? null

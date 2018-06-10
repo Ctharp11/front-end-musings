@@ -7,7 +7,7 @@ import Rules from './Rules';
 class Home extends Component {
     render() {
         return (
-            <div className="home">  
+            <div className="containers home">  
                 <Tags />
                 <Post />
                 <Rules />
