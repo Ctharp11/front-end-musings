@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 // COMPONENTS
 import About from './About';
 import AuthModal from './Modals/AuthModal';
+import Dashboard from './User/Dashboard';
 import Home from './Home';
 import Nav from './Nav';
 import Post from './Post/Post';
@@ -14,36 +15,40 @@ class App extends Component {
     constructor() {
         super();
         this.state={
-            show: false
+            show: false, 
+            isAuthenticated: false
         }
     }
 
-    toggleAuthModal = (show) => {
-        console.log(show);
-        // this.setState({ show: !this.state.show })
+    toggleAuthModal = () => {
+        this.setState({ show: !this.state.show })
+    }
+
+    isAuthenticated = () => {
+
     }
 
     render() {
         const allProps = {
             show: this.state.show,
             toggleAuthModal: this.toggleAuthModal
-
         }
 
         return(
             <div className="app site">
+            {!this.state.show
+                ? null
+                :
+                <AuthModal {...allProps} />
+            }
                 <div className="site-content">
-                    <Nav { ...allProps } />
+                    <Nav {...allProps} />
                     <Switch>
                         <Route exact path="/" component={Home} /> 
+                        <Route exact path="/dashboard" component={Dashboard} />
                         <Route exact path="/post" component={Post} />
                         <Route exact path="/about" component={About} />
                     </Switch>
-                    {!this.state.show
-                        ? null
-                        :
-                        <AuthModal />
-                    }
                 </div>
 
                 <Footer />
