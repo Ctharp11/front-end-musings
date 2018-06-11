@@ -23,7 +23,7 @@ class SignUp extends Component {
     }
 
     changeAuthType = () => {
-        this.props.signUp();
+        this.props.changeForm();
     }
 
     render () {
@@ -31,40 +31,50 @@ class SignUp extends Component {
         return (
             <div> 
                 {!this.props.signedUpForm
-                    ?
-                        <button className="button auth-signup-button" onClick={this.changeAuthType}> Sign Up </button>
+                    ?   
+                        <div>
+                            <div className="auth-or"> OR </div>
+                            <button className="button auth-signup-button" onClick={this.changeAuthType}> Sign Up </button>
+                        </div>
                     :
                         <form onSubmit={this.handleSubmit} className="auth-form">
 
+                            <h4 className="auth-head"> Sign Up </h4>
+
                             <div>
+                                <button className="button auth-signup-formbutton"> Sign Up </button>
+                            </div>
+
+                            <div className="auth-form-inputflex">
                                 <input 
+                                    className="auth-form-input-signup"
                                     placeholder="Name"
                                     name="name"
                                     onChange={this.handleChange} 
                                 />
 
                                 <input 
+                                    className="auth-form-input-signup"
                                     placeholder="Email"
                                     name="email"
                                     onChange={this.handleChange} 
                                 />
                             </div>
 
-                            <div> 
+                            <div className="auth-form-inputflex">  
                                 <input 
+                                    className="auth-form-input-signup"
                                     placeholder="Password"
                                     name="password"
                                     onChange={this.handleChange} 
                                 />
 
                                 <input 
+                                    className="auth-form-input-signup"
                                     placeholder="Confirm Password"
                                 />
                             </div>
 
-                            <div>
-                                <button className="button auth-signup-button"> Sign Up </button>
-                            </div>
                         </form>
                 }
             </div>

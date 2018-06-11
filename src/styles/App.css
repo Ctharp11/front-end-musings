@@ -69,6 +69,53 @@ body {
       top: 1rem;
       left: 1rem;
       font-size: 1.8rem; }
+  .auth-head {
+    font-size: 1.6rem; }
+  .auth-or {
+    font-size: 14px;
+    font-weight: 300;
+    position: absolute;
+    top: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%); }
+  .auth-login-formbutton {
+    width: 10rem;
+    position: absolute;
+    top: -3rem;
+    left: -14%; }
+  .auth-login-button {
+    width: 10rem;
+    position: absolute;
+    top: 3rem;
+    left: 14%; }
+  .auth-signup-formbutton {
+    width: 10rem;
+    position: absolute;
+    top: -3rem;
+    left: 60%; }
+  .auth-signup-button {
+    width: 10rem;
+    position: absolute;
+    top: 3rem;
+    left: 55%; }
+  .auth-form {
+    display: inline-block;
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    transform: translateX(-50%); }
+    .auth-form-inputflex {
+      display: flex; }
+    .auth-form-input {
+      width: 15rem;
+      height: 1.5rem;
+      margin: 1rem;
+      padding: 3px; }
+    .auth-form-input-signup {
+      width: 10rem;
+      height: 1.5rem;
+      margin: 1rem;
+      padding: 3px; }
 
 .footer {
   font-size: 16px;
@@ -158,6 +205,25 @@ body {
       .nav-content-auth {
         position: relative;
         top: .5rem; } }
+
+.posts {
+  height: 13rem;
+  width: 55%;
+  border: 1px solid #666;
+  box-shadow: 0 3px 8px -2px black; }
+
+.rules {
+  height: 5rem;
+  width: 10rem;
+  border: 1px solid #666;
+  box-shadow: 0 3px 8px -2px black;
+  padding: 1rem; }
+
+.tags {
+  height: 20rem;
+  width: 25%;
+  border: 1px solid #666;
+  box-shadow: 0 3px 8px -2px black; }
 
 .hover:hover {
   cursor: pointer; }

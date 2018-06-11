@@ -10,7 +10,7 @@ class Tags extends Component {
 
     render() {
         return (
-            <div className="tags"> 
+            <div className="containers tags"> 
                 Tags
             </div>
         )

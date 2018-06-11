@@ -32,19 +32,17 @@ class AuthModal extends Component {
 
     changeForm = (name) => {
         console.log(name)
-        this.setState({ showLogin: !this.state[name] })
-    }
-
-    signUp = () => {
-        this.setState({ showSignup: !this.state.showSignup })
+        this.setState({ 
+            showLogin: !this.state.showLogin,
+            showSignup: !this.state.showSignup
+         })
     }
 
     render() {
         const authProps = {
             loggedInForm: this.state.showLogin,
             changeForm: this.changeForm,
-            signedUpForm: this.state.showSignup,
-            signUp: this.signUp,
+            signedUpForm: this.state.showSignup
         }
         return (
             <div className="auth"> 
