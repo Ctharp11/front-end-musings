@@ -55,10 +55,10 @@ body {
   width: 100vw;
   z-index: 4000; }
   .auth-modal {
-    height: 80%;
-    width: 50%;
+    height: 30rem;
+    width: 30rem;
     position: relative;
-    top: 10%;
+    top: 7rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
@@ -71,39 +71,25 @@ body {
       font-size: 1.8rem; }
   .auth-head {
     font-size: 1.6rem; }
-  .auth-or {
-    font-size: 14px;
-    font-weight: 300;
-    position: absolute;
-    top: 3.5rem;
+  .auth-toggle-buttons {
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    top: 3rem;
     left: 50%;
     transform: translateX(-50%); }
-  .auth-login-formbutton {
-    width: 10rem;
-    position: absolute;
-    top: -3rem;
-    left: -14%; }
-  .auth-login-button {
-    width: 10rem;
-    position: absolute;
-    top: 3rem;
-    left: 14%; }
-  .auth-signup-formbutton {
-    width: 10rem;
-    position: absolute;
-    top: -3rem;
-    left: 60%; }
-  .auth-signup-button {
-    width: 10rem;
-    position: absolute;
-    top: 3rem;
-    left: 55%; }
+    .auth-toggle-buttons-login, .auth-toggle-buttons-signup {
+      padding: .7rem 1.5rem;
+      border: 1px solid #666; }
+    .auth-toggle-buttons-show-grey {
+      background-color: #999; }
   .auth-form {
+    position: relative;
     display: inline-block;
-    position: absolute;
     top: 6rem;
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    text-align: center; }
     .auth-form-inputflex {
       display: flex; }
     .auth-form-input {

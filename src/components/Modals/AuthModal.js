@@ -7,8 +7,7 @@ class AuthModal extends Component {
     constructor(){
         super();
         this.state = {
-            showLogin: true,
-            showSignup: false
+            showLogin: true
         }
     }
 
@@ -30,19 +29,15 @@ class AuthModal extends Component {
         }
     }
 
-    changeForm = (name) => {
-        console.log(name)
+    changeForm = () => {
         this.setState({ 
-            showLogin: !this.state.showLogin,
-            showSignup: !this.state.showSignup
+            showLogin: !this.state.showLogin
          })
     }
 
     render() {
         const authProps = {
-            loggedInForm: this.state.showLogin,
-            changeForm: this.changeForm,
-            signedUpForm: this.state.showSignup
+        
         }
         return (
             <div className="auth"> 
@@ -50,8 +45,20 @@ class AuthModal extends Component {
                     <div className="auth-modal-close hover" onClick={this.props.toggleAuthModal}>   X 
                     </div>
 
-                    <Login {...authProps} />
-                    <SignUp {...authProps} />
+                    <div className="auth-toggle-buttons"> 
+                        <span className={"auth-toggle-buttons-login hover " + (this.state.showLogin ? "auth-toggle-buttons-show-grey" : null)} onClick={this.changeForm}> Log In </span>
+                        <span className={"auth-toggle-buttons-signup hover " + (!this.state.showLogin ? "auth-toggle-buttons-show-grey" : null)} onClick={this.changeForm}> Sign Up </span>
+                    </div>
+
+                    {this.state.showLogin
+                        ?
+                            <Login {...authProps} />
+                        :
+                            <SignUp {...authProps} />
+                    }
+
+                    
+                    
                 </div>
             </div>
         )
