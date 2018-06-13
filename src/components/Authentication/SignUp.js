@@ -10,8 +10,7 @@ class SignUp extends Component {
             email: '',
             password: '',
             passwordConfirm:'',
-            error: '',
-            success: ''
+            error: ''
         }
     }
 
@@ -40,6 +39,11 @@ class SignUp extends Component {
             return
         }
 
+        this.handleSignIn();
+    }
+
+    handleSignIn = () => {
+
         const signUpData = {
             name: this.state.name,
             email: this.state.email,
@@ -47,14 +51,13 @@ class SignUp extends Component {
         }
 
         signUp(signUpData)
-
-    }
-
-    showSuccess = () => {
-        this.setState({ success: "You're signed up!"})
+        this.props.toggleAuthModal()
+        this.props.toggleIsAuthenticated();
+        this.props.history.push('/dashboard');
     }
 
     render () {
+        console.log(this.props)
         return (
             <div> 
             <form onSubmit={this.handleSubmit} className="auth-form">
@@ -66,12 +69,6 @@ class SignUp extends Component {
                         null
                     :
                         <div> {this.showError()} </div>
-                }
-                {this.state.success === ''
-                    ? 
-                        null
-                    :
-                        <div> {this.showSuccess()} </div>
                 }
 
                 <div className="auth-form-inputflex">

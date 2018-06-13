@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 
 // COMPONENTS
 import About from './About';
@@ -11,13 +12,26 @@ import Post from './Post/Post';
 
 import Footer from './Footer';
 
+const history = createHistory()
+const location = history.location
+
+
 class App extends Component {
     constructor() {
         super();
         this.state={
             show: false, 
-            isAuthenticated: false
+            isAuthenticated: false,
+            history: '',
+            location: ''
         }
+    }
+
+    componentDidMount() {
+        this.setState({ 
+            history,
+            location
+        })
     }
 
     toggleAuthModal = () => {
@@ -25,7 +39,7 @@ class App extends Component {
     }
 
     toggleIsAuthenticated = () => {
-
+        this.setState({ isAuthenticated: !this.state.isAuthenticated })
     }
 
     render() {
@@ -33,7 +47,9 @@ class App extends Component {
             show: this.state.show,
             toggleAuthModal: this.toggleAuthModal,
             isAuthenticated: this.state.isAuthenticated,
-            toggleIsAuthenticated: this.toggleIsAuthenticated
+            toggleIsAuthenticated: this.toggleIsAuthenticated,
+            history,
+            location
         }
 
         return(
@@ -46,7 +62,7 @@ class App extends Component {
                 <div className="site-content">
                     <Nav {...allProps} />
                     <Switch>
-                        <Route exact path="/" component={Home} /> 
+                        <Route {...allProps} exact path="/" component={Home} /> 
                         <Route exact path="/dashboard" component={Dashboard} />
                         <Route exact path="/post" component={Post} />
                         <Route exact path="/about" component={About} />

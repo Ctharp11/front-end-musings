@@ -36,9 +36,7 @@ class AuthModal extends Component {
     }
 
     render() {
-        const authProps = {
-        
-        }
+
         return (
             <div className="auth"> 
                 <div className="auth-modal" ref={this.setWrapperRef}> 
@@ -52,9 +50,9 @@ class AuthModal extends Component {
 
                     {this.state.showLogin
                         ?
-                            <Login {...authProps} />
+                            <Login {...this.props} />
                         :
-                            <SignUp {...authProps} />
+                            <SignUp {...this.props} />
                     }
 
                     
