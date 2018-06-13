@@ -24,14 +24,16 @@ class App extends Component {
         this.setState({ show: !this.state.show })
     }
 
-    isAuthenticated = () => {
+    toggleIsAuthenticated = () => {
 
     }
 
     render() {
         const allProps = {
             show: this.state.show,
-            toggleAuthModal: this.toggleAuthModal
+            toggleAuthModal: this.toggleAuthModal,
+            isAuthenticated: this.state.isAuthenticated,
+            toggleIsAuthenticated: this.toggleIsAuthenticated
         }
 
         return(

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { compareData } from '../../services/auth';
+
 class Login extends Component {
 
     constructor() {
@@ -11,20 +13,21 @@ class Login extends Component {
         }
     }
 
+    showError = () => {
+        return <div className="auth-error"> {this.state.error} </div>
+    }
+
     handleChange = (e) => {
+        this.setState({ error: '' });
         const { name, value } = e.target;
-        console.log(name, value);
         this.setState({ [name]: value });
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
-    }
 
-    // changeAuthType = () => {
-    //     this.props.changeForm();
-    // }
+        compareData();
+    }
 
     render () {
         console.log(this.props)
@@ -34,9 +37,18 @@ class Login extends Component {
 
                 <h4 className="auth-head"> Log In </h4>
 
+                {this.state.error === ''
+                    ? 
+                        null
+                    :
+                        <div> {this.showError()} </div>
+                }
+                
+
                 <div>
                     <input 
                         className="auth-form-input"
+                        type="email"
                         placeholder="Email"
                         name="email"
                         onChange={this.handleChange} 
@@ -45,7 +57,8 @@ class Login extends Component {
 
                 <div>
                     <input 
-                    className="auth-form-input"
+                        className="auth-form-input"
+                        type="password"
                         placeholder="Password"
                         name="password"
                         onChange={this.handleChange} 

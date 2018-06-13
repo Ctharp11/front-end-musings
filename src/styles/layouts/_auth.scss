@@ -29,6 +29,12 @@
         font-size: 1.6rem;
     }
 
+    &-error {
+        background-color: $color-error;
+        padding: 1rem; 
+        font-size: 12px;
+    }
+
     &-toggle-buttons {
         font-size: 2rem;
         position: relative;

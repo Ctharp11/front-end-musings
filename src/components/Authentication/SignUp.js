@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { signUp } from '../../services/auth';
+
 class SignUp extends Component {
     constructor() {
         super();
@@ -7,32 +9,70 @@ class SignUp extends Component {
             name: '',
             email: '',
             password: '',
-            error: ''
+            passwordConfirm:'',
+            error: '',
+            success: ''
         }
     }
 
+    showError = () => {
+        return <div className="auth-error"> {this.state.error} </div>
+    }
+
     handleChange = (e) => {
+        this.setState({ error: '' });
         const { name, value } = e.target;
-        console.log(name, value);
         this.setState({ [name]: value });
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        const password = this.state.password;
+        const passwordConfirm = this.state.passwordConfirm;
+
+        if (!password.match("^(?=.*[a-z])(?=.*[0-9])(?=.{8,})")) {
+             this.setState({ error: 'Your password must be a minimum of eight characters and have at least one letter and one number.'});
+            return
+        } 
+
+        if (password !== passwordConfirm) {
+            this.setState({ error: "Your passwords don't match"});
+            return
+        }
+
+        const signUpData = {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password
+        }
+
+        signUp(signUpData)
+
     }
 
-    // changeAuthType = () => {
-    //     this.props.changeForm();
-    // }
+    showSuccess = () => {
+        this.setState({ success: "You're signed up!"})
+    }
 
     render () {
-        console.log(this.props)
         return (
             <div> 
             <form onSubmit={this.handleSubmit} className="auth-form">
 
                 <h4 className="auth-head"> Sign Up </h4>
+
+                {this.state.error === ''
+                    ? 
+                        null
+                    :
+                        <div> {this.showError()} </div>
+                }
+                {this.state.success === ''
+                    ? 
+                        null
+                    :
+                        <div> {this.showSuccess()} </div>
+                }
 
                 <div className="auth-form-inputflex">
                     <input 
@@ -44,6 +84,7 @@ class SignUp extends Component {
 
                     <input 
                         className="auth-form-input-signup"
+                        type="email"
                         placeholder="Email"
                         name="email"
                         onChange={this.handleChange} 
@@ -53,6 +94,7 @@ class SignUp extends Component {
                 <div className="auth-form-inputflex">  
                     <input 
                         className="auth-form-input-signup"
+                        type="password"
                         placeholder="Password"
                         name="password"
                         onChange={this.handleChange} 
@@ -60,7 +102,10 @@ class SignUp extends Component {
 
                     <input 
                         className="auth-form-input-signup"
+                        type="password"
                         placeholder="Confirm Password"
+                        name="passwordConfirm"
+                        onChange={this.handleChange}
                     />
                 </div>
 

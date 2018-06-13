@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import Tags from './Tags';
-import Post from './Post/Post';
+import PostSnippet from './Post/PostSnippet';
 
 class Home extends Component {
     render() {
         return (
             <div className="containers home">  
                 <Tags />
-                <Post />
+                <PostSnippet />
             </div>
         )
     }

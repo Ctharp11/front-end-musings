@@ -71,6 +71,10 @@ body {
       font-size: 1.8rem; }
   .auth-head {
     font-size: 1.6rem; }
+  .auth-error {
+    background-color: #ff967c;
+    padding: 1rem;
+    font-size: 12px; }
   .auth-toggle-buttons {
     font-size: 2rem;
     position: relative;
@@ -192,7 +196,7 @@ body {
         position: relative;
         top: .5rem; } }
 
-.posts {
+.post-snippet {
   height: 13rem;
   width: 55%;
   border: 1px solid #666;
