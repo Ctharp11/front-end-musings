@@ -1,0 +1,49 @@
+@import '../variables/variables';
+
+.dashboard {
+
+    &-head {
+        font-size: 2rem;
+        margin: 2rem;
+    }
+
+    &-menu {
+        width: 20%;
+        margin: 2rem;
+        border-right: 1px solid $color-grey-light;
+
+        &-list {
+            list-style: none;
+
+            & a {
+               text-decoration: none; 
+            }
+            
+
+            &-item {
+                margin: 1rem;
+                font-size: 16px;
+                text-decoration: none;
+                color: $color-font-main;
+                padding: .5rem 0 .5rem .5rem; 
+
+                &:hover {
+                    background-color: $color-primary;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &-container {
+        position: absolute;
+        top: 5rem;
+        left: 30%;
+
+        &-head {
+            font-size: 18px;
+        }
+    }
+
+
+}

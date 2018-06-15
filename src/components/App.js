@@ -10,6 +10,7 @@ import Home from './Home';
 import Nav from './Nav';
 import Post from './Post/Post';
 import Footer from './Footer';
+import FourOhFour from './FourOhFour';
 
 const history = createHistory({forceRefresh:true})
 
@@ -67,9 +68,10 @@ class App extends Component {
                     <Nav {...allProps} />
                     <Switch>
                         <Route {...allProps} exact path="/" component={Home} /> 
-                        <Route {...allProps} exact path="/dashboard" component={Dashboard} />
+                        <Route {...allProps} path="/dashboard" component={Dashboard} />
                         <Route exact path="/post" component={Post} />
                         <Route exact path="/about" component={About} />
+                        <Route component={FourOhFour} />
                     </Switch>
                 </div>
 

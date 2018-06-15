@@ -107,6 +107,40 @@ body {
       margin: 1rem;
       padding: 3px; }
 
+.containers {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px; }
+
+.dashboard-head {
+  font-size: 2rem;
+  margin: 2rem; }
+
+.dashboard-menu {
+  width: 20%;
+  margin: 2rem;
+  border-right: 1px solid #999; }
+  .dashboard-menu-list {
+    list-style: none; }
+    .dashboard-menu-list a {
+      text-decoration: none; }
+    .dashboard-menu-list-item {
+      margin: 1rem;
+      font-size: 16px;
+      text-decoration: none;
+      color: #333;
+      padding: .5rem 0 .5rem .5rem; }
+      .dashboard-menu-list-item:hover {
+        background-color: #ffd3be;
+        cursor: pointer; }
+
+.dashboard-container {
+  position: absolute;
+  top: 5rem;
+  left: 30%; }
+  .dashboard-container-head {
+    font-size: 18px; }
+
 .footer {
   font-size: 16px;
   display: flex;
@@ -205,7 +239,7 @@ body {
         .nav-content-profile-dropdown-signout:hover {
           cursor: pointer; }
         .nav-content-profile-dropdown-link {
-          padding: .5rem .5rem .5rem .5rem;
+          padding: .5rem;
           text-decoration: none;
           color: #333;
           width: 100%;
