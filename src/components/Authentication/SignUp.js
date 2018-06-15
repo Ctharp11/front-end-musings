@@ -42,6 +42,11 @@ class SignUp extends Component {
             return
         }
 
+        if (this.state.email === '' || this.state.name === '') {
+            this.setState({ error: "Please fill out all fields." })
+            return
+        }
+
         this.handleSignIn();
     }
 

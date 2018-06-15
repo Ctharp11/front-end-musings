@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import createHistory from 'history/createBrowserHistory';
 
-import { compareData } from '../../services/auth';
+const history = createHistory({})
 
 class Login extends Component {
 
@@ -26,11 +27,38 @@ class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        compareData();
+        const signUpInfo = JSON.parse(sessionStorage.getItem('signUpInfo'));
+
+        if (signUpInfo === null) {
+            this.setState({ error: "Please sign up first."})
+            return
+        }
+
+        if (this.state.email === '' || this.state.password === '') {
+            this.setState({ error: "Please fill in both email and password."})
+            return
+        }
+
+        if (this.state.email !== signUpInfo.email) {
+            this.setState({ error: "We don't recongize your email."})
+            return
+        }
+
+        if (this.state.password !== signUpInfo.password) {
+            this.setState({ error: "We don't recongize your password."})
+            return
+        }
+
+        this.login();
+    }
+
+    login = () => {
+        this.props.toggleAuthModal()
+        this.props.toggleIsAuthenticated();
+        history.push('/dashboard');
     }
 
     render () {
-        console.log(this.props)
         return (
             <div> 
             <form onSubmit={this.handleSubmit} className="auth-form">

@@ -24,12 +24,12 @@ class App extends Component {
     }
 
     componentDidMount() {
-        if (localStorage.getItem('signUpInfo')) {
+        if (localStorage.getItem('signedIn')) {
             this.setState({ isAuthenticated: true });
 
         }
-        const userInfo = localStorage.getItem('signUpInfo');
-        this.setState({ userInfo });
+        // const userInfo = sessionStorage.getItem('signUpInfo');
+        // this.setState({ userInfo });
     }
 
     toggleAuthModal = () => {
