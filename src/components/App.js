@@ -9,12 +9,9 @@ import Dashboard from './User/Dashboard';
 import Home from './Home';
 import Nav from './Nav';
 import Post from './Post/Post';
-
 import Footer from './Footer';
 
-const history = createHistory()
-const location = history.location
-
+const history = createHistory({forceRefresh:true})
 
 class App extends Component {
     constructor() {
@@ -22,24 +19,31 @@ class App extends Component {
         this.state={
             show: false, 
             isAuthenticated: false,
-            history: '',
-            location: ''
+            userInfo: ''
         }
     }
 
     componentDidMount() {
-        this.setState({ 
-            history,
-            location
-        })
+        if (localStorage.getItem('signUpInfo')) {
+            this.setState({ isAuthenticated: true });
+
+        }
+        const userInfo = localStorage.getItem('signUpInfo');
+        this.setState({ userInfo });
     }
 
     toggleAuthModal = () => {
-        this.setState({ show: !this.state.show })
+        this.setState({ show: !this.state.show });
     }
 
     toggleIsAuthenticated = () => {
-        this.setState({ isAuthenticated: !this.state.isAuthenticated })
+        this.setState({ isAuthenticated: !this.state.isAuthenticated });
+    }
+
+    logout = () => {
+        this.setState({ isAuthenticated: false });
+        localStorage.clear();
+        history.push('/');
     }
 
     render() {
@@ -48,8 +52,8 @@ class App extends Component {
             toggleAuthModal: this.toggleAuthModal,
             isAuthenticated: this.state.isAuthenticated,
             toggleIsAuthenticated: this.toggleIsAuthenticated,
-            history,
-            location
+            userInfo: this.state.userInfo,
+            logout: this.logout
         }
 
         return(
@@ -63,7 +67,7 @@ class App extends Component {
                     <Nav {...allProps} />
                     <Switch>
                         <Route {...allProps} exact path="/" component={Home} /> 
-                        <Route exact path="/dashboard" component={Dashboard} />
+                        <Route {...allProps} exact path="/dashboard" component={Dashboard} />
                         <Route exact path="/post" component={Post} />
                         <Route exact path="/about" component={About} />
                     </Switch>

@@ -5,7 +5,6 @@ import ProfileDropDown from './Modals/ProfileDropdown';
 
 const Nav = (props) => (
     <div className="nav box-shadow">  
-    {console.log(props)}
 
         <div className="nav-header"> <Link to="/"> Front End Musings </Link> </div> 
 
@@ -14,7 +13,7 @@ const Nav = (props) => (
 
             {props.isAuthenticated
                 ?
-                    <ProfileDropDown />
+                    <ProfileDropDown {...props} />
                 :
                 <div 
                     className="nav-content-auth hover" 

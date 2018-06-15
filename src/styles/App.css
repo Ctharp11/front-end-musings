@@ -58,7 +58,7 @@ body {
     height: 30rem;
     width: 30rem;
     position: relative;
-    top: 7rem;
+    top: 4rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
@@ -191,6 +191,27 @@ body {
         .nav-content-profile {
           position: relative;
           top: .5rem; } }
+      .nav-content-profile-dropdown {
+        position: absolute;
+        top: 2rem;
+        left: 1.2rem;
+        z-index: 4000;
+        width: 9rem;
+        height: 7rem;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px #999; }
+        .nav-content-profile-dropdown-signout:hover {
+          cursor: pointer; }
+        .nav-content-profile-dropdown-link {
+          padding: .5rem .5rem .5rem .5rem;
+          text-decoration: none;
+          color: #333;
+          width: 100%;
+          display: block; }
+          .nav-content-profile-dropdown-link:hover {
+            background-color: #ffd3be; }
     @media screen and (max-width: 800px) {
       .nav-content-auth {
         position: relative;

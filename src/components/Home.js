@@ -5,7 +5,6 @@ import PostSnippet from './Post/PostSnippet';
 
 class Home extends Component {
     render() {
-        console.log('home', this.props)
         return (
             <div className="containers home">  
                 <Tags />

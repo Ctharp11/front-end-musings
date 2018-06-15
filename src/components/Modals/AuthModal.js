@@ -36,6 +36,7 @@ class AuthModal extends Component {
     }
 
     render() {
+        
 
         return (
             <div className="auth"> 

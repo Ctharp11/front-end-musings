@@ -80,6 +80,38 @@
                 position: relative;
                 top: .5rem;
             }
+
+            &-dropdown {
+                position: absolute;
+                top: 2rem;
+                left: 1.2rem;
+                z-index: 4000;
+                width: 9rem;
+                height: 7rem;
+                background-color: $color-white;
+                padding: 2rem;
+                border-radius: 5px;
+                box-shadow: 0 2px 2px $color-grey-light;
+
+                &-signout {
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                &-link {
+                    padding: .5rem .5rem .5rem .5rem;
+                    text-decoration: none;
+                    color: $color-font-main;
+                    width: 100%;
+                    display: block;
+
+                    &:hover {
+                        background-color: #ffd3be;
+                    }
+                }
+            }
         }
 
         &-auth {

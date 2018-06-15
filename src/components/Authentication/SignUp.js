@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import createHistory from 'history/createBrowserHistory';
 
 import { signUp } from '../../services/auth';
+
+const history = createHistory({})
 
 class SignUp extends Component {
     constructor() {
@@ -53,7 +56,7 @@ class SignUp extends Component {
         signUp(signUpData)
         this.props.toggleAuthModal()
         this.props.toggleIsAuthenticated();
-        this.props.history.push('/dashboard');
+        history.push('/dashboard');
     }
 
     render () {
