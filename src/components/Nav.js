@@ -9,7 +9,20 @@ const Nav = (props) => (
         <div className="nav-header"> <Link to="/"> Front End Musings </Link> </div> 
 
         <div className="nav-content"> 
-            <div className="nav-content-create-post"> <Link to="post"> <button className="button">  Create Post </button> </Link> </div> 
+
+            <div className="nav-content-create-post"> 
+
+                {props.isAuthenticated 
+                    ? 
+                      <Link to='/post'> <button className="button"> Create Post </button> </Link> 
+                    : 
+                    <button className="button" onClick={props.toggleAuthModal}> Create Post </button> 
+                }
+                 
+                
+                   
+                
+            </div> 
 
             {props.isAuthenticated
                 ?

@@ -32,6 +32,11 @@ class SignUp extends Component {
         const password = this.state.password;
         const passwordConfirm = this.state.passwordConfirm;
 
+        if (this.state.email === '' || this.state.name === '') {
+            this.setState({ error: "Please fill out all fields." })
+            return
+        }
+
         if (!password.match("^(?=.*[a-z])(?=.*[0-9])(?=.{8,})")) {
              this.setState({ error: 'Your password must be a minimum of eight characters and have at least one letter and one number.'});
             return
@@ -42,10 +47,7 @@ class SignUp extends Component {
             return
         }
 
-        if (this.state.email === '' || this.state.name === '') {
-            this.setState({ error: "Please fill out all fields." })
-            return
-        }
+        
 
         this.handleSignIn();
     }

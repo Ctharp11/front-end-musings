@@ -47,6 +47,14 @@ class App extends Component {
         history.push('/');
     }
 
+    restrictedRoutes = (Component, props) => {
+        if (this.state.isAuthenticated) {
+            return <Component {...props} />
+        }
+
+        history.push('/');
+    }
+
     render() {
         const allProps = {
             show: this.state.show,
@@ -68,7 +76,7 @@ class App extends Component {
                     <Nav {...allProps} />
                     <Switch>
                         <Route {...allProps} exact path="/" component={Home} /> 
-                        <Route {...allProps} path="/dashboard" component={Dashboard} />
+                        <Route {...allProps} path="/dashboard" render={() => this.restrictedRoutes(Dashboard, allProps)} />
                         <Route exact path="/post" component={Post} />
                         <Route exact path="/about" component={About} />
                         <Route component={FourOhFour} />

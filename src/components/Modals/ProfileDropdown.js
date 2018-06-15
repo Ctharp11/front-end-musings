@@ -25,7 +25,7 @@ class ProfileDropDown extends Component {
         return (
             <div> 
                 <div className="nav-content-profile" onMouseEnter={this.toggleShowDropdown} > 
-                    <Link to="dashboard" > My Profile </Link> 
+                    <Link to="/dashboard/activity" > My Profile </Link> 
                     
                    
                 </div>
@@ -34,11 +34,11 @@ class ProfileDropDown extends Component {
                         ?
                             <div className="nav-content-profile-dropdown" onMouseLeave={this.toggleShowDropdown}>
                             
-                                <Link to="/dashboard" className="nav-content-profile-dropdown-link" onClick={this.toggleShowDropdown}>
+                                <Link to="/dashboard/activity" className="nav-content-profile-dropdown-link" onClick={this.toggleShowDropdown}>
                                      My Activity      
                                 </Link> 
 
-                                <Link to="/dashboard/details" className="nav-content-profile-dropdown-link" onClick={this.toggleShowDropdown}>
+                                <Link to="/dashboard/account-info" className="nav-content-profile-dropdown-link" onClick={this.toggleShowDropdown}>
                                     My Account Details 
                                 </Link>
 
