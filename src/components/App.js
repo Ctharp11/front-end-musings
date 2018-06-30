@@ -27,8 +27,8 @@ class App extends Component {
     componentDidMount() {
         if (localStorage.getItem('signedIn')) {
             this.setState({ isAuthenticated: true });
-
         }
+        console.log(localStorage.getItem('signedIn'));
         // const userInfo = sessionStorage.getItem('signUpInfo');
         // this.setState({ userInfo });
     }

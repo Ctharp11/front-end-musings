@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
+import { loginTrue } from '../../services/auth';
 
 const history = createHistory({})
 
@@ -48,7 +49,7 @@ class Login extends Component {
             this.setState({ error: "We don't recongize your password."})
             return
         }
-
+        loginTrue();
         this.login();
     }
 
