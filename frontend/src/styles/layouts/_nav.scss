@@ -1,0 +1,123 @@
+@import '../variables/variables';
+
+.nav {
+
+    height: 7rem;
+    border-bottom: 1px solid $color-grey-light;
+    display: flex;
+
+    @media screen and (max-width: 800px ) {
+        display: block;
+    }
+
+    &-header {
+        position: relative;
+        top: 2rem;
+        left: 4rem;
+        font-size: $font-size-large;
+        font-weight: 300;
+        text-decoration: none;
+
+        @media screen and (max-width: 800px ) {
+            font-size: 1.8rem;
+            display: inline-block;
+            left: 50%;
+            top: 1rem;
+            transform: translateX(-50%);
+        }
+
+        & a:link,
+        & a:visited {
+            color: $color-font-main;
+            text-decoration: none;
+        }
+    }
+
+    &-content {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 3.1rem;
+        right: 4rem;
+        font-size: 16px;
+
+        @media screen and (max-width: 800px ) {
+            width: 100%;
+            top: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-create-post {
+            position: relative;
+            top: -.5rem;
+            margin-right: 2rem;
+
+            & a,
+            & a:link,
+            & a:visited {
+                color: $color-font-main;
+                text-decoration: none;
+            }
+
+            @media screen and (max-width: 800px ) {
+                padding: 3px .5rem;
+                top: -3px;
+            }
+        }
+
+        &-profile {
+            margin-right: 2rem;
+
+            & a,
+            & a:link,
+            & a:visited {
+                color: $color-font-main;
+                text-decoration: none;
+            }
+
+            @media screen and (max-width: 800px ) {
+                position: relative;
+                top: .5rem;
+            }
+
+            &-dropdown {
+                position: absolute;
+                top: 2rem;
+                left: 1.2rem;
+                z-index: 4000;
+                width: 9rem;
+                background-color: $color-white;
+                padding: 2rem;
+                border-radius: 5px;
+                box-shadow: 0 2px 2px $color-grey-light;
+
+                &-signout {
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                &-link {
+                    padding: .5rem;
+                    text-decoration: none;
+                    color: $color-font-main;
+                    width: 100%;
+                    display: block;
+
+                    &:hover {
+                        background-color: $color-primary;
+                    }
+                }
+            }
+        }
+
+        &-auth {
+            @media screen and (max-width: 800px ) {
+                position: relative;
+                top: .5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.four-oh-four {
+    background-image: url('/images/sad_cat.png');
+    background-size: cover;
+    background-position: center 50%;
+    height: 50rem;
+
+    &-title {
+        text-align: center;
+        font-size: calc(4vw + 1rem);
+    }
+}
